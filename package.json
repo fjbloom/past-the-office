@@ -1,0 +1,13 @@
+{
+  "name": "past-the-office",
+  "private": true,
+  "description": "City of London history for your lunch break",
+  "type": "module",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.7"
+  }
+}

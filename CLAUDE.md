@@ -78,6 +78,6 @@ Add each decision here as it is made, with the date.
 
 - 2026-10-29 Project folder: `C:\Users\frede\Projects\past-the-office`, outside OneDrive, because OneDrive syncing can damage git's internal files. GitHub will be the backup.
 - 2026-10-29 Version control: git, main branch `main`. Text files stored with LF line endings (`.gitattributes`).
-- Framework: not chosen yet.
+- 2026-10-29 Framework: Eleventy 3 (`@11ty/eleventy`). It turns the Markdown place files into plain HTML pages, with no code running in the visitor's browser beyond the map. Pages, places and layouts live in `content/` (layouts in `content/_includes/`); the built site goes to `_site/`; anything in `public/` is copied across as it is. `npm start` runs a local preview at http://localhost:8080, `npm run build` builds once.
 - Hosting: not chosen yet.
 - Domain: not bought; wait until the site is nearly ready.
