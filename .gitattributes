@@ -1,0 +1,2 @@
+# Store text files with Linux-style line endings, so builds behave the same everywhere
+* text=auto eol=lf

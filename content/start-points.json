@@ -1,0 +1,15 @@
+{
+  "_note": "Coordinates are approximate and must be checked against the real map. Gresham Street points are the owner's office area.",
+  "startPoints": [
+    { "id": "gresham-guildhall", "group": "Gresham Street", "name": "Gresham St, by the Guildhall", "short": "Gresham St", "lat": 51.5156, "lon": -0.0925, "default": true },
+    { "id": "gresham-west", "group": "Gresham Street", "name": "Gresham St, west end (St Martin's Le Grand)", "short": "Gresham St west", "lat": 51.5166, "lon": -0.0975 },
+    { "id": "gresham-east", "group": "Gresham Street", "name": "Gresham St, east end (Basinghall St)", "short": "Gresham St east", "lat": 51.5152, "lon": -0.0898 },
+    { "id": "bank", "group": "Tube stations", "name": "Bank", "short": "Bank", "lat": 51.5133, "lon": -0.0886 },
+    { "id": "st-pauls", "group": "Tube stations", "name": "St Paul's", "short": "St Paul's", "lat": 51.5146, "lon": -0.0973 },
+    { "id": "moorgate", "group": "Tube stations", "name": "Moorgate", "short": "Moorgate", "lat": 51.5186, "lon": -0.0886 },
+    { "id": "liverpool-st", "group": "Tube stations", "name": "Liverpool Street", "short": "Liverpool St", "lat": 51.5178, "lon": -0.0823 },
+    { "id": "cannon-st", "group": "Tube stations", "name": "Cannon Street", "short": "Cannon St", "lat": 51.5113, "lon": -0.0904 },
+    { "id": "aldgate", "group": "Tube stations", "name": "Aldgate", "short": "Aldgate", "lat": 51.5143, "lon": -0.0755 },
+    { "id": "tower-hill", "group": "Tube stations", "name": "Tower Hill", "short": "Tower Hill", "lat": 51.5098, "lon": -0.0766 }
+  ]
+}
