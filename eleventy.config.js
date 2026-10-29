@@ -6,6 +6,12 @@ export default function (eleventyConfig) {
   // when there is a place-page layout and drafts can be hidden.
   eleventyConfig.ignores.add("content/places/**");
 
+  // The style sample page is for checking the design locally. It is built by
+  // "npm start" (the preview) but left out of "npm run build" (the live site).
+  if (process.env.ELEVENTY_RUN_MODE === "build") {
+    eleventyConfig.ignores.add("content/style-sample.njk");
+  }
+
   // Copy everything in public/ (photos, fonts, styles) to the site as it is.
   eleventyConfig.addPassthroughCopy({ public: "/" });
 }

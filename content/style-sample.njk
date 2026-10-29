@@ -1,0 +1,92 @@
+---
+layout: base.njk
+title: Style sample
+---
+{#- A page for checking the Plate styles by eye. It is only built in the
+    local preview (npm start), never for the live site. See eleventy.config.js.
+    The place names are real; every number on this page is a specimen. -#}
+<header class="masthead">
+  <p class="label">City of London</p>
+  <h1>Past the Office</h1>
+  <p class="soft">City of London history for your lunch break</p>
+</header>
+
+<main>
+  <p class="label">Style sample · local preview only · all figures are specimens</p>
+
+  <h2>Type</h2>
+  <p>This is body text in EB Garamond. It is set at a comfortable size and line length for reading a short history on screen, with <em>italic for emphasis</em> and <strong>a heavier weight</strong> where needed. <a href="#">A link looks like this.</a></p>
+  <p class="soft">Secondary text is in soft ink, for practical notes and captions.</p>
+  <h3>A place title in IM Fell italic</h3>
+  <p class="label">A label in IM Fell English small capitals</p>
+
+  <hr>
+
+  <div class="two-col">
+    <section aria-labelledby="map-heading">
+      <h2 id="map-heading">Map area</h2>
+      <div class="hatch" style="height: 18rem; position: relative;">
+        <div class="river" style="position: absolute; left: 0; right: 0; bottom: 2.5rem; height: 2.75rem;"></div>
+      </div>
+      <p class="soft" style="margin-top: 0.5rem;">Hatching for built-up areas, with a band of river wash. The real map arrives in week 2.</p>
+    </section>
+
+    <section aria-labelledby="refs-heading">
+      <h2 id="refs-heading">References</h2>
+      <p class="label">Place · walk each way</p>
+      <ol class="leaders">
+        <li><span class="name"><span class="pin">1</span>Royal Exchange</span><span>4 min</span></li>
+        <li><span class="name"><span class="pin">2</span>St Lawrence Jewry</span><span>2 min</span></li>
+        <li><span class="name"><span class="pin">3</span>St Paul's Cross</span><span>6 min</span></li>
+        <li><span class="name"><span class="pin">4</span>Jamaica Wine House</span><span>7 min</span></li>
+        <li><span class="name"><span class="pin">5</span>Monument to the Great Fire</span><span>10 min</span></li>
+      </ol>
+    </section>
+  </div>
+
+  <hr>
+
+  <div class="two-col">
+    <section aria-labelledby="controls-heading">
+      <h2 id="controls-heading">Controls</h2>
+      <p>
+        <label for="start" class="label">Start from</label>
+        <select id="start">
+          <option>Gresham St, by the Guildhall</option>
+          <option>Bank</option>
+        </select>
+      </p>
+      <p>
+        <label for="lunch" class="label">Lunch break: 45 minutes</label>
+        <input id="lunch" type="range" min="15" max="90" step="5" value="45">
+      </p>
+      <p>
+        <label><input type="checkbox"> Keep 15 minutes to eat</label>
+      </p>
+      <p><button type="button">Show what fits</button></p>
+      <p class="soft">Press Tab to move through these and check the focus ring.</p>
+    </section>
+
+    <section aria-labelledby="photo-heading">
+      <h2 id="photo-heading">Photo plate</h2>
+      <figure class="photo-plate">
+        <div class="hatch" style="aspect-ratio: 4 / 3; display: grid; place-items: center;">
+          <span class="label">Your photo goes here</span>
+        </div>
+        <figcaption>Fig. 1 · caption in small capitals</figcaption>
+      </figure>
+    </section>
+  </div>
+
+  <hr>
+
+  <h2>Colours</h2>
+  <ol class="leaders">
+    <li><span class="name">Paper</span><span>#E8E1CD</span></li>
+    <li><span class="name">Surround</span><span>#D9D1BB</span></li>
+    <li><span class="name">Ink</span><span>#26211B</span></li>
+    <li><span class="name">Soft ink</span><span class="soft">#4A4234</span></li>
+    <li><span class="name">Brick</span><span style="color: var(--brick);">#8E2F22</span></li>
+    <li><span class="name">River wash</span><span>#B7C5C0</span></li>
+  </ol>
+</main>

@@ -5,8 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if title %}{{ title }} · {% endif %}Past the Office</title>
   <meta name="description" content="City of London history for your lunch break">
+  <link rel="preload" href="/fonts/eb-garamond-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles/plate.css">
 </head>
 <body>
-  {{ content | safe }}
+  <div class="plate">
+    {{ content | safe }}
+  </div>
 </body>
 </html>
