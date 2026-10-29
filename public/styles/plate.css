@@ -309,6 +309,53 @@ input[type="checkbox"] {
   vertical-align: -0.15em;
 }
 
+/* ---------- Place pages ---------- */
+
+.place-header {
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.75rem;
+  border-bottom: 3px double var(--ink);
+}
+
+.place-header p {
+  margin: 0;
+}
+
+.place-header a {
+  text-decoration: none;
+}
+
+.place-photo {
+  margin: 1.5rem 0 2rem;
+}
+
+.place-text h2,
+aside h2 {
+  font-size: 1.4rem;
+  margin-top: 1.5rem;
+}
+
+aside h2:first-child {
+  margin-top: 0;
+}
+
+/* Shown on draft places in the local preview, never on the live site. */
+.draft-notice {
+  margin-bottom: 2rem;
+  padding: 1rem 1.25rem;
+  border: 2px solid var(--brick);
+}
+
+.draft-notice .label {
+  color: var(--brick);
+  margin-bottom: 0.25rem;
+}
+
+.draft-notice ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
 /* ---------- Two-column layout: map left, references right ---------- */
 
 .two-col {

@@ -1,0 +1,72 @@
+---
+layout: base.njk
+---
+{#- The page for one place. The fields come from the top of the place file;
+    "content" is the Markdown below it (the history and your note). -#}
+<header class="place-header">
+  <p class="label"><a href="/">Past the Office</a></p>
+</header>
+
+<main>
+  {% if status != "published" %}
+  <div class="draft-notice" role="note">
+    <p class="label">Draft · shown in the local preview only</p>
+    <ul>
+      {% if not factsChecked %}<li>History not yet checked against sources.</li>{% endif %}
+      {% if not coordinatesChecked %}<li>Map position not yet checked.</li>{% endif %}
+      {% if not practicalCheckedOn %}<li>Opening hours and prices not yet checked.</li>{% endif %}
+      {% if not photos.length %}<li>No photos yet.</li>{% endif %}
+      {% if not sources.length %}<li>No sources listed yet.</li>{% endif %}
+    </ul>
+  </div>
+  {% endif %}
+
+  <h1>{{ name }}</h1>
+  {% if era %}<p class="label">{{ era }}</p>{% endif %}
+
+  {% for photo in photos %}
+  <figure class="photo-plate place-photo">
+    <img src="/images/places/{{ page.fileSlug }}/{{ photo.file }}" alt="{{ photo.alt }}">
+    {% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}
+  </figure>
+  {% endfor %}
+
+  <div class="two-col">
+    <div class="place-text">
+      {{ content | safe }}
+    </div>
+
+    <aside aria-label="Visiting">
+      {% if lookFor %}
+      <h2>Look for</h2>
+      <p>{{ lookFor }}</p>
+      {% endif %}
+
+      <h2>Time needed</h2>
+      <p>
+        About {{ visitMinutes }} minutes
+        {%- if quickMinutes %}, or {{ quickMinutes }} for a quick look{% endif %}.
+      </p>
+
+      {% if practical %}
+      <h2>Practical</h2>
+      <p>{{ practical }}</p>
+      {% endif %}
+      {% if access %}<p><span class="label">Access</span><br>{{ access }}</p>{% endif %}
+      <p class="soft">
+        Hours and prices change, so check before you go.
+        {% if practicalCheckedOn %}Last checked {{ practicalCheckedOn | readableDate }}.{% endif %}
+      </p>
+    </aside>
+  </div>
+
+  {% if sources.length %}
+  <hr>
+  <h2>Sources</h2>
+  <ul>
+    {% for source in sources %}
+    <li>{% if source.url %}<a href="{{ source.url }}">{{ source.title }}</a>{% else %}{{ source.title }}{% endif %}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</main>

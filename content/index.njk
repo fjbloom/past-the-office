@@ -7,4 +7,19 @@ layout: base.njk
   <p class="soft">City of London history for your lunch break</p>
 </header>
 <main>
+  {#- A plain list of places for now. The map, start point and lunch slider
+      replace this in week 2. -#}
+  <section aria-labelledby="places-heading">
+    <h2 id="places-heading">References</h2>
+    <ol class="leaders">
+      {% for place in collections.places %}
+      <li>
+        <span class="name"><span class="pin">{{ loop.index }}</span><a href="{{ place.url }}">{{ place.data.name }}</a></span>
+        <span class="soft">{% if place.data.status != "published" %}draft{% else %}{{ place.data.era }}{% endif %}</span>
+      </li>
+      {% else %}
+      <li>No places yet.</li>
+      {% endfor %}
+    </ol>
+  </section>
 </main>
