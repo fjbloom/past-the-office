@@ -16,6 +16,7 @@ layout: base.njk
       {% if not coordinatesChecked %}<li>Map position not yet checked.</li>{% endif %}
       {% if not practicalCheckedOn %}<li>Opening hours and prices not yet checked.</li>{% endif %}
       {% if not photos.length %}<li>No photos yet.</li>{% endif %}
+      {% if photos | rejectattr("alt") | length %}<li>Some photos have no description yet.</li>{% endif %}
       {% if not sources.length %}<li>No sources listed yet.</li>{% endif %}
     </ul>
   </div>

@@ -12,7 +12,11 @@ lookFor: "Step into Guildhall Yard first. A curved line in the paving marks the 
 practical: "Church opening hours vary, so check before you head over."
 practicalCheckedOn:
 access: ""
-photos: []
+photos:
+  - { file: "img_1808.jpg", alt: "" }
+  - { file: "img_1813.jpg", alt: "" }
+  - { file: "img_1838.jpg", alt: "" }
+  - { file: "img_1841.jpg", alt: "" }
 sources: []
 factsChecked: false
 ---
