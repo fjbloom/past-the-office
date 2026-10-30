@@ -3,6 +3,18 @@ layout: base.njk
 ---
 {#- The page for one place. The fields come from the top of the place file;
     "content" is the Markdown below it (the history and your note). -#}
+
+{#- One framed photo, used for the lead photo and the grid.
+    Clicking it opens the whole photo at full size. -#}
+{% macro plate(photo, extraClass) %}
+<figure class="photo-plate {{ extraClass }}">
+  <a href="/images/places/{{ page.fileSlug }}/{{ photo.file }}">
+    <img src="/images/places/{{ page.fileSlug }}/{{ photo.file }}" alt="{{ photo.alt }}">
+  </a>
+  {% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}
+</figure>
+{% endmacro %}
+
 <header class="place-header">
   <p class="label"><a href="/">Past the Office</a></p>
 </header>
@@ -54,16 +66,6 @@ layout: base.njk
     </p>
   </section>
 
-  {#- One framed photo. Clicking it opens the whole photo at full size. -#}
-  {% macro plate(photo, extraClass) %}
-  <figure class="photo-plate {{ extraClass }}">
-    <a href="/images/places/{{ page.fileSlug }}/{{ photo.file }}">
-      <img src="/images/places/{{ page.fileSlug }}/{{ photo.file }}" alt="{{ photo.alt }}">
-    </a>
-    {% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}
-  </figure>
-  {% endmacro %}
-
   <div class="two-col">
     <div class="place-text">
       {{ content | safe }}
@@ -80,7 +82,7 @@ layout: base.njk
     </aside>
   </div>
 
-  {#- The rest of the photos, two to a row. -#}
+  {#- The rest of the photos, in a grid. -#}
   {% if photos.length > 1 %}
   <hr>
   <h2>More photos</h2>
