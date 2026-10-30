@@ -25,6 +25,35 @@ layout: base.njk
   <h1>{{ name }}</h1>
   {% if era %}<p class="label">{{ era }}</p>{% endif %}
 
+  {#- The facts you need to decide whether to go, straight under the title. -#}
+  <section class="visit-facts" aria-label="Visiting">
+    <dl>
+      <div>
+        <dt class="label">Time needed</dt>
+        <dd class="visit-time">
+          About {{ visitMinutes }} minutes
+          {%- if quickMinutes %}, or {{ quickMinutes }} for a quick look{% endif %}.
+        </dd>
+      </div>
+      {% if practical %}
+      <div>
+        <dt class="label">Practical</dt>
+        <dd>{{ practical }}</dd>
+      </div>
+      {% endif %}
+      {% if access %}
+      <div>
+        <dt class="label">Access</dt>
+        <dd>{{ access }}</dd>
+      </div>
+      {% endif %}
+    </dl>
+    <p class="soft">
+      Hours and prices change, so check before you go.
+      {% if practicalCheckedOn %}Last checked {{ practicalCheckedOn | readableDate }}.{% endif %}
+    </p>
+  </section>
+
   {#- One framed photo. Clicking it opens the whole photo at full size. -#}
   {% macro plate(photo, extraClass) %}
   <figure class="photo-plate {{ extraClass }}">
@@ -40,7 +69,7 @@ layout: base.njk
       {{ content | safe }}
     </div>
 
-    <aside aria-label="Visiting">
+    <aside aria-label="Photo and what to look for">
       {#- The first photo sits at the top, beside the history. -#}
       {% if photos.length %}{{ plate(photos[0], "lead-photo") }}{% endif %}
 
@@ -48,22 +77,6 @@ layout: base.njk
       <h2>Look for</h2>
       <p>{{ lookFor }}</p>
       {% endif %}
-
-      <h2>Time needed</h2>
-      <p>
-        About {{ visitMinutes }} minutes
-        {%- if quickMinutes %}, or {{ quickMinutes }} for a quick look{% endif %}.
-      </p>
-
-      {% if practical %}
-      <h2>Practical</h2>
-      <p>{{ practical }}</p>
-      {% endif %}
-      {% if access %}<p><span class="label">Access</span><br>{{ access }}</p>{% endif %}
-      <p class="soft">
-        Hours and prices change, so check before you go.
-        {% if practicalCheckedOn %}Last checked {{ practicalCheckedOn | readableDate }}.{% endif %}
-      </p>
     </aside>
   </div>
 

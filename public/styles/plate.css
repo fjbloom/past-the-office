@@ -329,6 +329,37 @@ input[type="checkbox"] {
   margin: 0 0 1.75rem;
 }
 
+/* Time needed, practical details and access: a ruled band under the title. */
+.visit-facts {
+  margin: 1.25rem 0 2rem;
+  padding: 1rem 0 0;
+  border-top: var(--rule);
+  border-bottom: var(--rule);
+}
+
+.visit-facts dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1rem 2.5rem;
+  margin: 0 0 0.75rem;
+}
+
+.visit-facts dd {
+  margin: 0.2rem 0 0;
+}
+
+.visit-facts .visit-time {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.visit-facts .soft {
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
 /* Further photos, three to a row (two on phones). Each is cropped to a
    square so the rows line up; clicking one opens the whole photo. */
 .photo-grid {
