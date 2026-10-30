@@ -13,7 +13,7 @@ practical: ""
 practicalCheckedOn:
 access: ""
 photos:
-  - { file: "img_1837.jpg", alt: "" }
+  - { file: "img_1837.jpg", alt: "Guildhall's pale stone front across the open paving of Guildhall Yard, under a clear blue sky." }
 sources: []
 factsChecked: false
 ---
