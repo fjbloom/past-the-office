@@ -25,12 +25,15 @@ layout: base.njk
   <h1>{{ name }}</h1>
   {% if era %}<p class="label">{{ era }}</p>{% endif %}
 
-  {% for photo in photos %}
-  <figure class="photo-plate place-photo">
-    <img src="/images/places/{{ page.fileSlug }}/{{ photo.file }}" alt="{{ photo.alt }}">
+  {#- One framed photo. Clicking it opens the whole photo at full size. -#}
+  {% macro plate(photo, extraClass) %}
+  <figure class="photo-plate {{ extraClass }}">
+    <a href="/images/places/{{ page.fileSlug }}/{{ photo.file }}">
+      <img src="/images/places/{{ page.fileSlug }}/{{ photo.file }}" alt="{{ photo.alt }}">
+    </a>
     {% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}
   </figure>
-  {% endfor %}
+  {% endmacro %}
 
   <div class="two-col">
     <div class="place-text">
@@ -38,6 +41,9 @@ layout: base.njk
     </div>
 
     <aside aria-label="Visiting">
+      {#- The first photo sits at the top, beside the history. -#}
+      {% if photos.length %}{{ plate(photos[0], "lead-photo") }}{% endif %}
+
       {% if lookFor %}
       <h2>Look for</h2>
       <p>{{ lookFor }}</p>
@@ -60,6 +66,17 @@ layout: base.njk
       </p>
     </aside>
   </div>
+
+  {#- The rest of the photos, two to a row. -#}
+  {% if photos.length > 1 %}
+  <hr>
+  <h2>More photos</h2>
+  <ul class="photo-grid">
+    {% for photo in photos %}
+    {% if not loop.first %}<li>{{ plate(photo) }}</li>{% endif %}
+    {% endfor %}
+  </ul>
+  {% endif %}
 
   {% if sources.length %}
   <hr>
